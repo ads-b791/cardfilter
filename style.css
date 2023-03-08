@@ -83,12 +83,15 @@ body{
 	margin-top: 16px;
 }
 .card__count div {
-	padding: 2px 16px;
+	/*padding: 2px 16px;
 	border: 1px solid #ccc;
 	border-radius: 50px;
 	color: #fff;
 	background-color: #777;
-	display: inline-block;
+	display: inline-block;*/
+}
+.card__count_empty div{
+	color: red;
 }
 .card__cost{
 	text-align: right;
