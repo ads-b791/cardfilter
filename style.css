@@ -115,6 +115,8 @@ body{
 .filters {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, 200px);
+	grid-gap: 16px;
+	margin-top: 16px;
 }
 .filters fieldset{
 	padding: 2px 8px 6px;

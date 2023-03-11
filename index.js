@@ -7,7 +7,9 @@ const domElements = {
 	},
 	filters: {
 		category: document.getElementById('filter-category'),
-		color: document.getElementById('filter-color')
+		color: document.getElementById('filter-color'),
+		year: document.getElementById('filter-year'),
+		country: document.getElementById('filter-country'),
 	}
 }
 
@@ -30,7 +32,7 @@ function generateCards(data) {
 
 		cards.push(`
 	<div class="card">
-	<img class="card__img" src="https://loremflickr.com/300/200/london?id-${i}" alt="">
+	<img class="card__img" src="https://loremflickr.com/300/200/London?id-${i}" alt="">
 	<div class="card__content">
 		<h3 class="card__title">${data[i].title}</h3>
 		<div class="card__description">${data[i].description}</div>
@@ -98,25 +100,46 @@ domElements.results.innerHTML = cardsArr.join('');
 		domElements.results.innerHTML = newFilteredCardsHTML.join('');
 	}
 }
-
+//console.log(e.target.value);
 {
-	domElements.filters.category.onchange = (e) => {
-		const value = e.target.value
-		//console.log(e.target.value);
-		const filteredCards = cardsData.filter(card => {
-			const reg = new RegExp(value)
+	//domElements.filters.category.onchange = (e) => {
+	//	const value = e.target.value
+	//	const filteredCards = cardsData.filter(card => {
+	//		const reg = new RegExp(value)
 
-			if (reg.test(card.params.category)) {
-				return true
-			} else {
-				return false
-			}
-		})
-		const filteredCardsHTML = generateCards(filteredCards);
-		domElements.results.innerHTML = filteredCardsHTML.join('');
+	//		if (reg.test(card.params.category)) {
+	//			return true
+	//		} else {
+	//			return false
+	//		}
+	//	})
+	//	const filteredCardsHTML = generateCards(filteredCards);
+	//	domElements.results.innerHTML = filteredCardsHTML.join('');
+	//}
+	function filterSelect(filterType) {
+		domElements.filters[filterType].onchange = (e) => {
+			const value = e.target.value
+			const filteredCards = cardsData.filter(card => {
+				const reg = new RegExp(value)
+
+				if (reg.test(card.params[filterType])) {
+					return true
+				} else {
+					return false
+				}
+			})
+			const filteredCardsHTML = generateCards(filteredCards);
+			domElements.results.innerHTML = filteredCardsHTML.join('');
+		}
 	}
+	const filterType = [
+		'category',
+		'color',
+		'year',
+		'country',
+	]
+	filterType.forEach(type => filterSelect(type));
 }
-
 
 
 
