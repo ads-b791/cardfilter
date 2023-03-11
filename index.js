@@ -116,6 +116,13 @@ domElements.results.innerHTML = cardsArr.join('');
 	//	const filteredCardsHTML = generateCards(filteredCards);
 	//	domElements.results.innerHTML = filteredCardsHTML.join('');
 	//}
+	const filtersType = [
+		'category',
+		'color',
+		'year',
+		'country',
+	]
+
 	function filterSelect(filterType) {
 		domElements.filters[filterType].onchange = (e) => {
 			const value = e.target.value
@@ -128,17 +135,30 @@ domElements.results.innerHTML = cardsArr.join('');
 					return false
 				}
 			})
-			const filteredCardsHTML = generateCards(filteredCards);
+			const fullFilteredCards = checkOtherFilters(filtersType, filteredCards);
+			const filteredCardsHTML = generateCards(fullFilteredCards);
 			domElements.results.innerHTML = filteredCardsHTML.join('');
 		}
 	}
-	const filterType = [
-		'category',
-		'color',
-		'year',
-		'country',
-	]
-	filterType.forEach(type => filterSelect(type));
+
+	filtersType.forEach(type => filterSelect(type))
+
+	function checkOtherFilters(filtersType, filteredCards) {
+		let updateFilteredCards = filteredCards
+		filtersType.forEach(type => {
+			const value = domElements.filters[type].value
+			const reg = new RegExp(value)
+			const newFilteredCards = updateFilteredCards.filter(card => {
+				if (reg.test(card.params[type])) {
+					return true
+				} else {
+					return false
+				}
+			})
+			updateFilteredCards = newFilteredCards
+		})
+		return updateFilteredCards
+	}
 }
 
 
