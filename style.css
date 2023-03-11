@@ -111,3 +111,21 @@ body{
 	font-weight: 300;
 	font-size: 0.8em;
 }
+
+.filters {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, 200px);
+}
+.filters fieldset{
+	padding: 2px 8px 6px;
+}
+.filters legend{
+	font-size: 14px;
+	color: #777;
+}
+.filter {
+	border: none;
+	font-size: 18px;
+	width: 100%;
+	outline: none;
+}

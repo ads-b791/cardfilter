@@ -5,6 +5,10 @@ const domElements = {
 		input: document.getElementById('search-input'),
 		button: document.getElementById('search-button'),
 	},
+	filters: {
+		category: document.getElementById('filter-category'),
+		color: document.getElementById('filter-color')
+	}
 }
 
 
@@ -74,7 +78,6 @@ domElements.results.innerHTML = cardsArr.join('');
 {
 	let searchValue = '';
 	domElements.search.input.oninput = (e) => {
-		//console.log(e.target.value);
 		searchValue = e.target.value
 		filterSearch();
 	}
@@ -94,9 +97,25 @@ domElements.results.innerHTML = cardsArr.join('');
 		const newFilteredCardsHTML = generateCards(filteredCardsData)
 		domElements.results.innerHTML = newFilteredCardsHTML.join('');
 	}
-
 }
 
+{
+	domElements.filters.category.onchange = (e) => {
+		const value = e.target.value
+		//console.log(e.target.value);
+		const filteredCards = cardsData.filter(card => {
+			const reg = new RegExp(value)
+
+			if (reg.test(card.params.category)) {
+				return true
+			} else {
+				return false
+			}
+		})
+		const filteredCardsHTML = generateCards(filteredCards);
+		domElements.results.innerHTML = filteredCardsHTML.join('');
+	}
+}
 
 
 

@@ -2,7 +2,7 @@
 const category = {
 	tehnica: 'Техника',
 	odejda: 'Одежда',
-	obuv: 'обувь',
+	obuv: 'Обувь',
 }
 
 const cardsData = [
