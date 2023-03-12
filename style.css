@@ -34,6 +34,8 @@ body{
 
 .content {
 	padding-top: 32px;
+	padding-left: 15px;
+	padding-right: 15px;
 }
 .title{
 	text-align: center;

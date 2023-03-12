@@ -1,8 +1,8 @@
 
 const category = {
-	tehnica: 'Техника',
-	odejda: 'Одежда',
-	obuv: 'Обувь',
+	appliances: 'Техника',
+	outfit: 'Одежда',
+	boots: 'Обувь',
 }
 
 const cardsData = [
@@ -14,7 +14,7 @@ const cardsData = [
 			year: 2020,
 			color: 'Черный',
 			country: 'Япония',
-			category: category.tehnica
+			category: category.appliances
 		},
 		count: 3,
 		cost: 30000
@@ -27,7 +27,7 @@ const cardsData = [
 			year: 2021,
 			color: 'Белый',
 			country: 'Китай',
-			category: category.odejda
+			category: category.outfit
 		},
 		count: 0,
 		cost: 3000
@@ -40,7 +40,7 @@ const cardsData = [
 			year: 2022,
 			color: 'Черный',
 			country: 'США',
-			category: category.obuv
+			category: category.boots
 		},
 		count: 9,
 		cost: 4500
@@ -53,7 +53,7 @@ const cardsData = [
 			year: 2020,
 			color: 'Серый',
 			country: 'Германия',
-			category: category.tehnica
+			category: category.appliances
 		},
 		count: 2,
 		cost: 18000
@@ -66,7 +66,7 @@ const cardsData = [
 			year: 2022,
 			color: 'Синий',
 			country: 'Украина',
-			category: category.odejda
+			category: category.outfit
 		},
 		count: 10,
 		cost: 2000
@@ -79,9 +79,87 @@ const cardsData = [
 			year: 2022,
 			color: 'Белый',
 			country: 'Китай',
-			category: category.odejda
+			category: category.outfit
 		},
 		count: 8,
 		cost: 1500
+	},
+	{
+		id: 7,
+		title: 'Телевизор',
+		description: 'Телевизор Sony 4k',
+		params: {
+			year: 2022,
+			color: 'Черный',
+			country: 'Китай',
+			category: category.appliances
+		},
+		count: 4,
+		cost: 11500
+	},
+	{
+		id: 8,
+		title: 'Джинсы',
+		description: 'Джинсы мужские, осень',
+		params: {
+			year: 2020,
+			color: 'Белый',
+			country: 'Украина',
+			category: category.outfit
+		},
+		count: 0,
+		cost: 1200
+	},
+	{
+		id: 9,
+		title: 'Джинсы',
+		description: 'Джинсы женские, летние',
+		params: {
+			year: 2021,
+			color: 'Синий',
+			country: 'Украина',
+			category: category.outfit
+		},
+		count: 8,
+		cost: 1150
+	},
+	{
+		id: 10,
+		title: 'Толстовка',
+		description: 'Толстовка унисекс',
+		params: {
+			year: 2021,
+			color: 'Cерый',
+			country: 'Китай',
+			category: category.outfit
+		},
+		count: 0,
+		cost: 890
+	},
+	{
+		id: 11,
+		title: 'Кросовки',
+		description: 'Кросовки спортивные Puma',
+		params: {
+			year: 2020,
+			color: 'Черный',
+			country: 'Китай',
+			category: category.boots
+		},
+		count: 9,
+		cost: 3100
+	},
+	{
+		id: 12,
+		title: 'Кросовки',
+		description: 'Кросовки спортивные Adidas',
+		params: {
+			year: 2022,
+			color: 'Черный',
+			country: 'США',
+			category: category.boots
+		},
+		count: 15,
+		cost: 4800
 	}
 ]
