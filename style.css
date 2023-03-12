@@ -10,11 +10,16 @@ body{
 }
 
 .wrapper {
+	padding: 0 15px;
 }
 
 .header {
 	display: flex;
 	justify-content: center;
+	padding: 0 15px;
+}
+.search{
+	padding: 0 15px;
 }
 .search input{
 	min-height: 50px;
@@ -23,6 +28,17 @@ body{
 	font-size: 20px;
 	margin-right: 16px;
 	height: 30px;
+}
+@media (max-width: 620px){
+	.search input{
+		width: 100%;
+		min-width: 260px;
+	}
+	.search{
+		display: flex;
+		flex-direction: column;
+		row-gap: 25px;
+	}
 }
 .search button{
 	min-height: 50px;
@@ -119,6 +135,7 @@ body{
 	grid-template-columns: repeat(auto-fit, 200px);
 	grid-gap: 16px;
 	margin-top: 16px;
+	justify-content: center;
 }
 .filters fieldset{
 	padding: 2px 8px 6px;
